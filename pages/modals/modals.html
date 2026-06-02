@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+    <title>Модальные окна</title>
+
+    <link rel="icon" type="image/png" href="../../img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../../img/favicon/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Зона комфорта" />
+
+    <link rel="stylesheet" type="text/css" href="../../fonts/stylesheet.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../libs/selectric/selectric.css" />
+    <link rel="stylesheet" type="text/css" href="../../libs/micromodal/micromodal.css" />
+    <link rel="stylesheet" type="text/css" href="../../libs/fancybox/fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../libs/aos/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+</head>
+
+<body class="market-page">
+
+    <div class="site-wrapper">
+
+        <main class="main">
+
+            <div class="container">
+                <br />
+                <br />
+
+                <a href="#" data-modal="popup-call">Заказать звонок</a>
+
+                <br />
+                <br />
+
+                <a href="#" data-modal="popup-guarant">Гарантия на аксессуары</a>
+
+                <br>
+                <br>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+
+<div class="micromodal-slide modal" id="popup-call" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+    <div class="modal__container" role="dialog" aria-modal="true">
+        <div class="modal__close" tabindex="-1" data-micromodal-close></div>
+        <div class="modal__inner">
+            <div class="modal__content" autocomplete="off">
+                <div class="popup-send">
+
+                    <section class="partners">
+                        <div class="partners__head">
+                            <h2 class="caption caption--h3" data-aos="fade-right" data-aos-duration="1200">
+                                Заказать звонок
+                            </h2>
+                        </div>
+
+                        <form action="" class="partners__body">
+                            <div class="input-item">
+                                <input type="text" placeholder="имя">
+                            </div>
+
+                            <div class="input-item">
+                                <input type="tel" placeholder="+7" class="phone-input" required>
+                            </div>
+
+                            <div class="input-item">
+                                <input type="email" placeholder="email" required>
+                            </div>
+
+                            <div class="check-block">
+                                <input type="checkbox" id="personal" checked required>
+                                <label for="personal">
+                                    Нажимая на кнопку “Стать партнером” вы соглашаетесь с обработкой персональных
+                                    данных и с
+                                    <a href="/">политикой конфиденциальности</a>
+                                </label>
+                            </div>
+
+                            <button class="btn btn--arrow btn--orange">отправить</button>
+                        </form>
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="micromodal-slide modal" id="popup-guarant" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+    <div class="modal__container" role="dialog" aria-modal="true">
+        <div class="modal__close" tabindex="-1" data-micromodal-close></div>
+        <div class="modal__inner">
+            <div class="modal__content" autocomplete="off">
+                <div class="popup-guarant">
+
+                    <div class="picture-block">
+                        <picture>
+                            <source type="image/webp" srcset="./../../img/garan5.webp" />
+                            <img src="./../../img/garan5.png" alt="">
+                        </picture>
+                    </div>
+
+                    <span class="caption caption--h4">гарантия на аксессуары</span>
+
+                    <p>Срок гарантии зависит от категории товара и указывается в сопроводительных документах. Гарантия
+                        распространяется на производственные дефекты и неисправности, возникшие не по вине покупателя.
+                        Гарантийный ремонт или замена осуществляется при предъявлении чека или иного подтверждения
+                        покупки.</p>
+
+                    <p>Срок гарантии зависит от категории товара и указывается в сопроводительных документах.
+                        Гарантия распространяется на производственные дефекты и неисправности, возникшие не по вине
+                        покупателя. Гарантийный ремонт или замена
+                        осуществляется при предъявлении чека или иного подтверждения покупки.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../libs/jquery/jquery-3.7.1.min.js"></script>
+<script src="../../libs/swiper/swiper-bundle.min.js"></script>
+<script src="../../libs/selectric/jquery.selectric.min.js"></script>
+<script src="../../libs/micromodal/micromodal.min.js"></script>
+<script src="../../libs/tabslet/jquery.tabslet.min.js"></script>
+<script src="../../libs/fancybox/fancybox.umd.js"></script>
+<script src="../../libs/inputmask/jquery.inputmask.min.js"></script>
+<script src="../../libs/aos/aos.js"></script>
+<script src="../../js/main.js"></script>
+
+</html>

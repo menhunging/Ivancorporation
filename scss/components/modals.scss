@@ -1,0 +1,187 @@
+.modal {
+  font-family: $fontMain;
+  display: none;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: $colorBlack;
+}
+
+.modal.is-open {
+  display: flex;
+  position: fixed;
+  z-index: 20;
+}
+
+.modal__container {
+  overflow: auto;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  padding: 50px 0;
+  max-width: 1050px;
+  position: relative;
+  margin: auto;
+
+  @include responsive1279 {
+    max-width: 730px;
+  }
+
+  @include responsive767 {
+    max-width: calc(100% - 20px);
+  }
+}
+
+.modal__content {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.modal__inner {
+  position: relative;
+}
+
+.modal__close {
+  cursor: pointer;
+  transition: all 0.3s;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  display: flex;
+  z-index: 10;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #292929;
+  align-items: center;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='41' height='42' viewBox='0 0 41 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M40.2989 1.48466C41.0797 2.26569 41.0797 3.5321 40.2989 4.31309L23.3269 21.285L40.2996 38.2577C41.0806 39.0387 41.0806 40.3051 40.2996 41.0861C39.5185 41.867 38.2521 41.8671 37.4711 41.0861L20.4985 24.1135L3.52932 41.0826C2.74834 41.8636 1.48196 41.8635 0.700892 41.0826C-0.0801572 40.3016 -0.0801559 39.0353 0.700892 38.2542L17.6701 21.285L0.701583 4.31654C-0.0792663 3.53552 -0.0793054 2.26912 0.701583 1.48812C1.48258 0.707122 2.74895 0.707232 3.53001 1.48812L20.4985 18.4566L37.4704 1.48466C38.2515 0.703738 39.5179 0.703656 40.2989 1.48466Z' fill='%23FA4F19'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 56px;
+  height: 56px;
+
+  @include responsive1279 {
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    background-size: contain;
+  }
+
+  @include responsive767 {
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    background-size: contain;
+    right: 10px;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.modal__content {
+  border-radius: 9px;
+
+  .scroll {
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 10px;
+      margin-right: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #d9d9d9;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $colorBlack;
+      border-radius: 10px;
+    }
+  }
+}
+
+.modal__overlay {
+  background-color: #edeadf;
+  transition: all 0.3s;
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: inherit;
+}
+
+// .popup-send {
+//   .partners {
+//     padding: 0;
+//   }
+// }
+
+// #popup-guarant {
+//   .modal__container {
+//     max-width: 624px;
+
+//     @include responsive1549 {
+//       max-width: 800px;
+//     }
+
+//     @include responsive1279 {
+//       max-width: 95%;
+//     }
+//   }
+
+//   .modal__close {
+//     width: 36px;
+//     height: 36px;
+//     background-size: 26px;
+//     right: 5px;
+//     top: 5px;
+
+//     @include responsive1279 {
+//     }
+//   }
+// }
+
+// .popup-guarant {
+//   background-color: $colorWhite;
+//   padding: 32px;
+//   display: flex;
+//   flex-direction: column;
+//   border-radius: 24px;
+//   overflow: hidden;
+//   gap: 40px;
+
+//   @include responsive1549 {
+//     padding: 24px;
+//     gap: 20px;
+//   }
+
+//   @include responsive1279 {
+//     padding: 16px;
+//     gap: 16px;
+//   }
+
+//   @include responsive767 {
+//     font-size: 12px;
+//   }
+
+//   .caption {
+//     font-family: $fontRadiotechnika;
+//     font-weight: 400;
+//   }
+
+//   .picture-block {
+//     width: 100%;
+//     height: 200px;
+//     background-color: rgba(183, 170, 154, 0.2);
+//     border-radius: 8px;
+//   }
+// }

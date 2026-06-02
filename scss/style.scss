@@ -1,0 +1,18 @@
+@import "./shared/values";
+@import "./shared/mixins";
+@import "./shared/reset";
+
+@import "base";
+
+// components
+@import "./components/btns";
+@import "./components/captions";
+@import "./components/modals";
+@import "./components/header";
+@import "./components/footer";
+
+// HOME PAGE
+@import "blocks/home-page/hero.scss";
+
+// BLOCKS
+@import "blocks";

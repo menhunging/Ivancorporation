@@ -1,0 +1,95 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.caption {
+  font-family: $fontMain;
+  font-weight: 600;
+}
+
+h1,
+.caption--h1 {
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 98px;
+
+  @include responsive1549 {
+    font-size: 76px;
+    line-height: 78px;
+  }
+
+  @include responsive1279 {
+    font-size: 50px;
+    line-height: 52px;
+  }
+
+  @include responsive1023 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  @include responsive767 {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  @include responsive389 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+h2,
+.caption--h2 {
+  font-size: 40px;
+  line-height: 42px;
+
+  @include responsive1549 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  @include responsive1279 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  @include responsive1023 {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  @include responsive767 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+h3,
+.caption--h3 {
+  font-size: 28px;
+  line-height: 30px;
+
+  @include responsive1549 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  @include responsive1279 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+h4,
+.caption--h4 {
+  font-size: 20px;
+  line-height: 22px;
+
+  @include responsive1279 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

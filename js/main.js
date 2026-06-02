@@ -1,0 +1,172 @@
+$(document).ready(function () {
+  if ($(".hero__slider").length > 0) {
+    const heroSwiper = new Swiper(".hero__slider", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        // prevEl: ".hero__slider .btnSwiperPrev",
+        nextEl: ".hero__slider .btnSwiperNext",
+      },
+    });
+  }
+
+  if ($(".burger").length > 0) {
+    let burger = $(".burger");
+    let body = $("body");
+    let overlay = $(".overlay");
+    let menu = $(".menu");
+    // let close = $(".menu-invis__close");
+
+    // close.on("click", function () {
+    //   handleClick();
+    // });
+
+    burger.on("click", function () {
+      handleClick();
+    });
+
+    function handleClick() {
+      if (burger.hasClass("opened")) {
+        closeMenu();
+      } else {
+        burger.addClass("opened");
+        menu.addClass("opened").slideDown(300);
+        overlay.addClass("visible");
+        body.addClass("is-openMenu");
+        overlay.on("click", function () {
+          closeMenu();
+        });
+      }
+    }
+
+    function closeMenu() {
+      burger.removeClass("opened");
+      menu.removeClass("opened").slideUp(300);
+      overlay.removeClass("visible");
+      body.removeClass("is-openMenu");
+      overlay.off("click");
+    }
+
+    $(window).resize(function () {
+      $(window).width() < 768 && closeMenu();
+    });
+  }
+
+  // base
+  if ($(".faq-list").length > 0) {
+    $(".faq-section__quest").on("click", function () {
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).parents(".faq-item").removeClass("opened");
+        $(this).next(".faq-section__answer").stop().slideUp();
+      } else {
+        $(".faq-item").removeClass("opened");
+        $(".faq-section__quest").removeClass("active");
+        $(".faq-section__answer").stop().slideUp();
+
+        $(this).parents(".faq-item").addClass("opened");
+        $(this).addClass("active");
+        $(this).next(".faq-section__answer").stop().slideDown();
+      }
+    });
+  }
+
+  if ($(".phone-input").length > 0) {
+    $(".phone-input").map(function () {
+      // phone input
+    });
+  }
+
+  if ($(".thisYear").length > 0) {
+    let date = new Date();
+    $(".thisYear").text(date.getFullYear());
+  }
+
+  if ($("[data-fancybox]").length > 0) {
+    Fancybox.bind("[data-fancybox]", {
+      speedIn: 600,
+      speedOut: 600,
+    });
+  }
+
+  if ($(".subcategories-slider").length > 0) {
+    const sliders = document.querySelectorAll(".subcategories-slider");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $(slider)
+            .parents(".subcategories")
+            .find(".btnSwiperNext")[0];
+          navPrev = $(slider)
+            .parents(".subcategories")
+            .find(".btnSwiperPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+              },
+              1280: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
+  }
+
+  if ($(".tabs").length > 0) {
+    $(".tabs").tabslet({
+      mouseevent: "click",
+      attribute: "href",
+      animation: true,
+    });
+  }
+
+  if ($(".modal").length > 0) {
+    MicroModal.init({
+      openTrigger: "data-modal",
+
+      onShow: () => {
+        $("body").addClass("modal-open");
+      },
+
+      onClose: () => {
+        $("body").removeClass("modal-open");
+      },
+    });
+
+    $("[data-modal]").map(function () {
+      $(this).click((e) => e.preventDefault());
+    });
+  }
+});
