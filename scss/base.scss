@@ -3,13 +3,13 @@ body {
   background-color: $colorWhite;
   color: $colorBlack;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 24px;
   font-weight: 400;
   font-variant-ligatures: none;
 
   @include responsive1549 {
     font-size: 17px;
-    line-height: 19px;
+    line-height: 21px;
   }
 
   @include responsive389 {
@@ -39,6 +39,10 @@ body {
       &::before {
         filter: brightness(0) invert(1);
       }
+
+      @include hover {
+        text-decoration-color: $colorWhite;
+      }
     }
 
     .main {
@@ -59,12 +63,20 @@ body {
       border-color: $colorDark;
     }
 
+    .link-phone {
+      @include hover {
+        text-decoration-color: $colorDark;
+      }
+    }
+
     .logo {
       filter: brightness(0) invert(1);
     }
   }
 
   &.is-openMenu {
+    overflow: hidden;
+
     .header {
       background-color: $colorWhite;
       border-color: $colorDark;
@@ -87,6 +99,10 @@ body {
 
       .burger-line {
         background-color: $colorDark;
+      }
+
+      &.is-scrolled {
+        border-color: $colorDark !important;
       }
     }
   }
@@ -194,22 +210,22 @@ picture {
 }
 
 section {
-  padding: 80px 0;
+  padding: 50px 0;
 
   @include responsive1549 {
-    padding: 50px 0;
-  }
-
-  @include responsive1279 {
-    padding: 50px 0;
-  }
-
-  @include responsive767 {
     padding: 40px 0;
   }
 
-  @include responsive639 {
+  @include responsive1023 {
     padding: 30px 0;
+  }
+
+  @include responsive767 {
+    padding: 32px 0;
+  }
+
+  @include responsive389 {
+    padding: 24px 0;
   }
 }
 
@@ -897,6 +913,8 @@ section {
   align-items: center;
   gap: 16px;
   transition: text-decoration 0.3s;
+  text-decoration: underline;
+  text-decoration-color: transparent;
 
   @include responsive1279 {
     font-size: 14px;
@@ -945,10 +963,6 @@ section {
         left: 0;
       }
     }
-  }
-
-  @include hover {
-    text-decoration: underline;
   }
 }
 

@@ -1,0 +1,103 @@
+.meet {
+}
+
+.meet__list {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  gap: 32px;
+
+  @include responsive1549 {
+    gap: 24px;
+  }
+
+  @include responsive1279 {
+    gap: 16px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.meet__item {
+  background-color: $colorLightGray;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 32px;
+  min-height: 393px;
+  width: 50%;
+
+  @include responsive1549 {
+    min-height: 378px;
+    gap: 32px;
+  }
+
+  @include responsive1279 {
+    padding: 20px;
+    gap: 22px;
+    min-height: 400px;
+  }
+
+  @include responsive1023 {
+    gap: 12px;
+    padding: 20px 13px 20px 20px;
+    min-height: 464px;
+  }
+
+  @include responsive767 {
+    padding: 20px;
+    min-height: initial;
+    gap: 12px;
+    width: 100%;
+  }
+
+  @include responsive389 {
+    padding: 12px;
+  }
+
+  .caption {
+    max-width: 620px;
+
+    @include responsive1279 {
+      min-height: 72px;
+    }
+
+    @include responsive1023 {
+      min-height: 96px;
+    }
+
+    @include responsive767 {
+      min-height: inherit;
+    }
+  }
+
+  p {
+    max-width: 650px;
+
+    @include responsive767 {
+      max-width: 99%;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+
+    @include responsive1279 {
+      max-width: 385px;
+      width: 100%;
+    }
+
+    @include responsive1023 {
+      max-width: 296px;
+    }
+
+    @include responsive767 {
+      margin-top: 12px;
+      max-width: 320px;
+    }
+  }
+}

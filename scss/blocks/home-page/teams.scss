@@ -1,0 +1,184 @@
+.teams {
+  overflow: hidden;
+
+  @include responsive767 {
+    border-top: solid 1px $colorBlack;
+  }
+}
+
+.teams__wrap {
+  border-top: solid 1px $colorBlack;
+  border-bottom: solid 1px $colorBlack;
+
+  @include responsive767 {
+    border: 0;
+  }
+}
+
+.teams__inner {
+  display: flex;
+  min-height: 538px;
+  width: 100%;
+
+  @include responsive1549 {
+    min-height: 471px;
+  }
+
+  @include responsive1279 {
+    min-height: 440px;
+  }
+
+  @include responsive1023 {
+    min-height: 447px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+  }
+}
+
+.teams__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 60px 0;
+  width: 100%;
+  max-width: 559px;
+  background-color: $colorWhite;
+  z-index: 3;
+  position: relative;
+  border-right: solid 1px $colorBlack;
+  padding-right: 31px;
+
+  @include responsive1549 {
+    max-width: 409px;
+    padding: 40px 45px 42px 0px;
+  }
+
+  @include responsive1279 {
+    max-width: 314px;
+    padding: 44px 26px 44px 0px;
+  }
+
+  @include responsive1023 {
+    max-width: 281px;
+    padding: 57px 26px 59px 0px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 0;
+    padding: 0;
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  @include before {
+    width: 300%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: $colorWhite;
+  }
+
+  .btn {
+  }
+
+  p {
+    text-align: right;
+  }
+}
+
+.teams__right {
+  width: calc(100% - 559px);
+  padding: 60px 0;
+  position: relative;
+  z-index: 2;
+
+  @include responsive1549 {
+    padding: 40px 0;
+  }
+
+  @include responsive1279 {
+    padding: 44px 0;
+  }
+
+  @include responsive1023 {
+    padding: 40px 0;
+    width: calc(100% - 290px);
+  }
+
+  @include responsive767 {
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 0;
+  }
+}
+
+.teams__slider {
+  width: calc(100% - 84px);
+  margin-left: 87px;
+  overflow: visible;
+
+  @include responsive1549 {
+    width: calc(100% + 160px);
+    margin-left: 52px;
+  }
+
+  @include responsive1279 {
+    width: calc(100% + 290px);
+    margin-left: 28px;
+  }
+
+  @include responsive1023 {
+    width: calc(100% - 33px);
+    margin-left: 28px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .picture-block {
+    width: 239px;
+    height: 334px;
+    margin-bottom: 14px;
+
+    @include responsive1549 {
+      width: 207px;
+      height: 290px;
+    }
+
+    @include responsive1279 {
+      width: 175px;
+      height: 244px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: auto;
+      padding-top: calc(230 / 165 * 100%);
+      margin-bottom: 18px;
+    }
+  }
+
+  strong {
+    font-size: 17px;
+    line-height: 20px;
+    display: block;
+
+    @include responsive1549 {
+      min-height: 42px;
+    }
+
+    @include responsive389 {
+      font-size: 15px;
+    }
+  }
+}

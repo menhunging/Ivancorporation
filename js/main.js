@@ -1,22 +1,4 @@
 $(document).ready(function () {
-  if ($(".hero__slider").length > 0) {
-    const heroSwiper = new Swiper(".hero__slider", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      effect: "fade",
-      fadeEffect: { crossFade: true },
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        // prevEl: ".hero__slider .btnSwiperPrev",
-        nextEl: ".hero__slider .btnSwiperNext",
-      },
-    });
-  }
-
   if ($(".burger").length > 0) {
     let burger = $(".burger");
     let body = $("body");
@@ -56,6 +38,70 @@ $(document).ready(function () {
 
     $(window).resize(function () {
       $(window).width() < 768 && closeMenu();
+    });
+  }
+
+  if ($(".header").length > 0) {
+    function toggleHeaderScrolledClass() {
+      if ($(window).scrollTop() > 0) {
+        $(".header").addClass("is-scrolled");
+      } else {
+        $(".header").removeClass("is-scrolled");
+      }
+    }
+
+    toggleHeaderScrolledClass();
+    $(window).on("scroll", toggleHeaderScrolledClass);
+  }
+
+  if ($(".hero__slider").length > 0) {
+    const heroSwiper = new Swiper(".hero__slider", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        // prevEl: ".hero__slider .btnSwiperPrev",
+        nextEl: ".hero__slider .btnSwiperNext",
+      },
+    });
+  }
+
+  if ($(".teams__slider").length > 0) {
+    const teamsSwiper = new Swiper(".teams__slider", {
+      slidesPerView: 3,
+      spaceBetween: 80,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.8,
+          spaceBetween: 12,
+        },
+        390: {
+          slidesPerView: 2.1,
+          spaceBetween: 12,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 18,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 18,
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1550: {
+          slidesPerView: 3,
+          spaceBetween: 80,
+        },
+      },
     });
   }
 

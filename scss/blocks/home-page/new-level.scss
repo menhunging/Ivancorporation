@@ -1,0 +1,111 @@
+.new-level {
+  .picture-block {
+    width: 616px;
+    height: 716px;
+
+    @include responsive1549 {
+      width: 434px;
+      height: 505px;
+    }
+
+    @include responsive1279 {
+      width: 334px;
+      height: 388px;
+    }
+
+    @include responsive1023 {
+      width: 277px;
+      height: 322px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      height: auto;
+      padding-top: calc(416 / 358 * 100%);
+    }
+
+    img {
+    }
+  }
+
+  .caption {
+    max-width: 530px;
+    width: 100%;
+    margin-bottom: 50px;
+    transform: translateX(-147px);
+
+    @include responsive1549 {
+      max-width: 410px;
+      transform: translateX(-111px);
+    }
+
+    @include responsive1279 {
+      transform: translateX(-68px);
+      margin-bottom: 20px;
+    }
+
+    @include responsive1023 {
+      margin-bottom: 15px;
+    }
+
+    @include responsive767 {
+      transform: initial;
+      margin-bottom: 20px;
+    }
+  }
+
+  .btn {
+    margin-top: 40px;
+
+    @include responsive1549 {
+      margin-top: 24px;
+    }
+
+    @include responsive1023 {
+      margin-top: 16px;
+    }
+  }
+}
+
+.new-level__inner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+  @include responsive1549 {
+    gap: 60px;
+  }
+
+  @include responsive1279 {
+    align-items: flex-start;
+    gap: 23px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.new-level__left {
+  @include responsive767 {
+    width: 100%;
+  }
+}
+
+.new-level__right {
+  max-width: 615px;
+  width: 50%;
+
+  @include responsive1279 {
+    padding-top: 10px;
+    max-width: 485px;
+    width: 70%;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}

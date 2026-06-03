@@ -1,0 +1,123 @@
+.reliable-support {
+}
+
+.reliable-support__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+
+  @include responsive1549 {
+    gap: 24px;
+  }
+
+  @include responsive1279 {
+    gap: 16px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.reliable-support__left {
+  width: 50%;
+
+  @include responsive1279 {
+    max-width: 360px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .caption {
+    margin-bottom: 40px;
+
+    @include responsive1279 {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    max-width: 628px;
+  }
+}
+
+.reliable-support__right {
+  width: 50%;
+  max-width: 552px;
+  margin-right: auto;
+
+  @include responsive1549 {
+    width: calc(50% - 26px);
+    margin: 0;
+  }
+
+  @include responsive1279 {
+    width: calc(50% - 8px);
+  }
+
+  @include responsive767 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  strong {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    @include responsive1549 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @include responsive1279 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      min-width: 60px;
+    }
+  }
+
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      padding-bottom: 17px;
+      border-bottom: solid 1px $colorBlack;
+
+      @include responsive1549 {
+        gap: 17px;
+        padding-bottom: 16px;
+      }
+
+      @include responsive1279 {
+        padding-bottom: 11px;
+      }
+
+      & + li {
+        padding-top: 16px;
+
+        @include responsive1549 {
+          padding-top: 16px;
+        }
+
+        @include responsive1279 {
+          padding-top: 11px;
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+}
