@@ -1,0 +1,101 @@
+.text-main {
+  overflow: hidden;
+
+  @include responsive767 {
+    border-top: solid 1px $colorBlack;
+  }
+}
+
+.text-main__wrap {
+  border-top: solid 1px $colorBlack;
+  border-bottom: solid 1px $colorBlack;
+
+  @include responsive767 {
+    border: 0;
+  }
+}
+
+.text-main__inner {
+  min-height: 288px;
+  width: 100%;
+  display: flex;
+
+  @include responsive1279 {
+    min-height: 309px;
+  }
+
+  @include responsive1023 {
+    min-height: 332px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+  }
+}
+
+.text-main__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 48px 0 39px 0;
+  width: 100%;
+  max-width: 559px;
+  background-color: $colorWhite;
+  z-index: 3;
+  position: relative;
+  border-right: solid 1px $colorBlack;
+  padding-right: 31px;
+  text-align: right;
+
+  @include responsive1549 {
+    max-width: 402px;
+    padding: 40px 24px 42px 0px;
+  }
+
+  @include responsive1279 {
+    max-width: 304px;
+    padding: 40px 22px 40px 0px;
+  }
+
+  @include responsive1023 {
+    max-width: 285px;
+    padding: 32px 20px 30px 0px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+    display: flex;
+    border: 0;
+    padding: 0;
+    max-width: 100%;
+    gap: 18px;
+  }
+  .caption {
+    max-width: 400px;
+  }
+}
+
+.text-main__right {
+  padding: 48px 44px;
+  flex: 1;
+
+  @include responsive1549 {
+    padding: 40px 56px;
+  }
+
+  @include responsive1279 {
+    padding: 40px 23px;
+  }
+
+  @include responsive1023 {
+    padding: 32px 22px;
+  }
+
+  @include responsive767 {
+    padding: 20px 0;
+    border-top: solid 1px $colorBlack;
+    border-bottom: solid 1px $colorBlack;
+    margin-top: 20px;
+  }
+}

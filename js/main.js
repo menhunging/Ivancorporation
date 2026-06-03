@@ -4,11 +4,6 @@ $(document).ready(function () {
     let body = $("body");
     let overlay = $(".overlay");
     let menu = $(".menu");
-    // let close = $(".menu-invis__close");
-
-    // close.on("click", function () {
-    //   handleClick();
-    // });
 
     burger.on("click", function () {
       handleClick();

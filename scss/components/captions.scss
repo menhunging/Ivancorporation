@@ -94,3 +94,17 @@ h4,
     line-height: 20px;
   }
 }
+
+h5,
+.caption--h5 {
+  font-size: 18px;
+  line-height: 22px;
+
+  @include responsive1549 {
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  @include responsive1279 {
+  }
+}
