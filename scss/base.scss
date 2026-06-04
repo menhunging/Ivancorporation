@@ -76,7 +76,7 @@ body {
   }
 
   &.is-openMenu {
-    overflow: hidden;
+    overflow-y: hidden;
 
     .header {
       background-color: $colorWhite;
