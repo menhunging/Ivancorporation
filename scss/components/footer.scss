@@ -1,2 +1,116 @@
 .footer {
+  background-color: $colorDark;
+  color: $colorWhite;
+  padding: 40px 0 60px;
+
+  @include responsive1023 {
+    padding: 30px 0 40px;
+  }
+
+  @include responsive767 {
+    padding: 35px 0 40px;
+  }
+
+  .logo {
+    img {
+      @include responsive1023 {
+        width: 182px;
+        height: 20px;
+      }
+    }
+  }
+
+  .menu__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 0;
+
+    @include responsive1279 {
+      gap: 11px;
+    }
+
+    @include responsive767 {
+      gap: 4px;
+    }
+
+    .link-phone {
+      @include responsive1023 {
+        color: $colorWhite;
+        overflow: visible;
+        width: auto;
+        height: auto;
+        white-space: normal;
+        font-size: 15px;
+        gap: 10px;
+      }
+    }
+  }
+
+  .socials {
+    @include responsive767 {
+      margin-top: 10px;
+    }
+  }
+
+  .socials__item {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.footer__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include responsive1279 {
+    font-size: 15px;
+  }
+
+  @include responsive767 {
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  gap: 73px;
+
+  @include responsive1549 {
+    gap: 38px;
+  }
+
+  @include responsive1279 {
+    gap: 20px;
+  }
+
+  @include responsive1023 {
+    width: 227px;
+    flex-wrap: wrap;
+    gap: 0px 24px;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  @include responsive767 {
+    margin: 20px 0;
+  }
+
+  a {
+    transition: opacity 0.3s;
+    font-weight: 600;
+
+    @include responsive1279 {
+      font-size: 15px;
+    }
+
+    @include hover {
+      opacity: 0.75;
+    }
+  }
 }

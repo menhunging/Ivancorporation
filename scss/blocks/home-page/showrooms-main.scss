@@ -1,0 +1,226 @@
+.showrooms-main {
+  overflow: hidden;
+}
+
+.showrooms-main__slider {
+  min-height: 675px;
+  margin-top: 40px;
+  overflow: visible;
+
+  @include responsive1549 {
+    min-height: 544px;
+  }
+
+  @include responsive1279 {
+    min-height: 407px;
+    margin-top: 30px;
+  }
+
+  @include responsive767 {
+    margin-top: 15px;
+    min-height: initial;
+  }
+
+  .swiper-slide {
+    position: relative;
+    width: 258px;
+    height: 765px;
+    cursor: pointer;
+    transition: width 0.3s;
+    overflow: hidden;
+
+    @include responsive1549 {
+      width: 184px;
+      height: 544px;
+    }
+
+    @include responsive1279 {
+      width: 138px;
+      height: 407px;
+    }
+
+    @include responsive767 {
+      width: 305px;
+      height: 379px;
+    }
+
+    @include responsive389 {
+      width: 280px;
+    }
+
+    &.swiper-slide-active {
+      @include responsive767 {
+        .link-gallery--imitation {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .link-gallery {
+          opacity: 1;
+        }
+
+        .showrooms-main__title {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .showrooms-main__content {
+          bottom: 10px;
+        }
+      }
+    }
+
+    &:hover {
+      width: 615px;
+
+      @include responsive1549 {
+        width: 437px;
+      }
+
+      @include responsive1279 {
+        width: 327px;
+      }
+
+      @include responsive767 {
+        width: 305px;
+      }
+
+      .link-gallery--imitation {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .link-gallery {
+        opacity: 1;
+      }
+
+      .showrooms-main__title {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .showrooms-main__content {
+        bottom: 16px;
+
+        @include responsive1279 {
+          bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .link-gallery--imitation {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+
+    @include responsive1279 {
+      right: 6px;
+      top: 10px;
+    }
+  }
+
+  .link-gallery {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 2;
+    opacity: 0;
+
+    @include responsive1279 {
+      right: 6px;
+      top: 10px;
+    }
+  }
+
+  .picture-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include before {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .showrooms-main__title {
+    color: $colorWhite;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+
+    @include responsive1549 {
+      text-align: left;
+      padding: 0 16px;
+    }
+
+    @include responsive1279 {
+      font-size: 15px;
+      line-height: 17px;
+      padding: 0 10px;
+      bottom: 10px;
+    }
+  }
+
+  .showrooms-main__content {
+    position: absolute;
+    bottom: -100%;
+    left: 20px;
+    width: 575px;
+    background-color: $colorWhite;
+    transition: bottom 0.3s;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include responsive1549 {
+      width: 405px;
+      left: 16px;
+      gap: 8px;
+    }
+
+    @include responsive1279 {
+      width: 299px;
+      padding: 16px;
+    }
+
+    @include responsive767 {
+      width: 272px;
+    }
+
+    @include responsive389 {
+      width: 260px;
+      padding: 12px;
+      left:10px;
+    }
+
+    .caption {
+      @include responsive767 {
+        font-size: 17px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .btn {
+  }
+}

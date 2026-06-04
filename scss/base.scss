@@ -972,10 +972,12 @@ section {
   position: relative;
   font-weight: 600;
   text-transform: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
   transition: text-decoration 0.3s;
 
   @include hover {
-    text-decoration: underline;
+    text-decoration-color: initial;
   }
 }
 

@@ -1,4 +1,9 @@
 .roadmap {
+  & + .text-main {
+    @include responsiveMinWidth1550 {
+      padding-top: 0;
+    }
+  }
 }
 
 .roadmap__inner {
@@ -31,6 +36,9 @@
       padding-left: 8px;
     }
 
+    @include responsive1023 {
+    }
+
     @include responsive767 {
       padding-left: 14px;
     }
@@ -45,6 +53,12 @@
 
       @include responsive767 {
         padding-left: 14px;
+      }
+
+      & + li {
+        @include responsive767 {
+          margin-bottom: 1px;
+        }
       }
 
       @include before {
@@ -85,13 +99,13 @@
 
   @include responsive1279 {
     grid-template-columns: 182px 144px 145px 145px 160px;
-    margin-top: 102px;
+    margin-top: 147px;
     padding-top: 14px;
   }
 
   @include responsive1023 {
     grid-template-columns: 152px 118px 118px 118px 130px;
-    margin-top: 143px;
+    margin-top: 146px;
   }
 
   @include responsive767 {
@@ -108,6 +122,7 @@
 
   @include responsive1549 {
     font-size: 16px;
+    line-height: 20px;
   }
 
   @include responsive1279 {
@@ -121,7 +136,7 @@
   }
 
   @include responsive767 {
-    padding: 16px 0;
+    padding: 17px 0;
     border-bottom: solid 1px $colorBlack;
   }
 
@@ -316,9 +331,17 @@
 
   &:last-child {
     border-bottom: 0;
+
+    @include responsive767 {
+      padding-bottom: 0;
+    }
   }
 
   ul {
+    @include responsive1023 {
+      margin-top: 0;
+    }
+
     @include responsive767 {
       padding-left: 5px;
       margin-top: 0;
@@ -345,14 +368,16 @@
 
     @include responsive1279 {
       font-size: 13px;
+      margin-bottom: 17px;
     }
 
     @include responsive1023 {
       font-size: 10px;
+      margin-bottom: 5px;
     }
 
     @include responsive767 {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
   }
 

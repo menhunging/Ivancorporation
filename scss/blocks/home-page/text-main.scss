@@ -2,7 +2,7 @@
   overflow: hidden;
 
   @include responsive767 {
-    border-top: solid 1px $colorBlack;
+    // border-top: solid 1px $colorBlack;
   }
 }
 
@@ -69,7 +69,7 @@
     border: 0;
     padding: 0;
     max-width: 100%;
-    gap: 18px;
+    gap: 21px;
   }
   .caption {
     max-width: 400px;

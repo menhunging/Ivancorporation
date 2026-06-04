@@ -4,19 +4,210 @@
 }
 
 .fabric-main__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 32px;
+  margin-top: 34px;
+
+  @include responsive1549 {
+    gap: 28px 24px;
+    margin-top: 40px;
+  }
+
+  @include responsive1279 {
+    margin-top: 20px;
+    gap: 28px 16px;
+  }
+
+  @include responsive1023 {
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  @include responsive767 {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .fabric-main__item {
+  background-color: $colorLightGray;
+  padding: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+
+  @include responsive1549 {
+    padding: 18px 16px;
+  }
+
+  @include responsive1279 {
+    padding: 16px 21px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  @include responsive1023 {
+    padding: 16px;
+  }
 }
 
 .fabric-main__left {
+  width: 357px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include responsive1549 {
+    width: 273px;
+    gap: 8px;
+  }
+
+  @include responsive1279 {
+    width: 100%;
+  }
+
+  .caption {
+    margin-bottom: 12px;
+    max-width: 300px;
+
+    @include responsive1549 {
+      max-width: 260px;
+      margin-bottom: 17px;
+    }
+
+    @include responsive1279 {
+      max-width: 230px;
+      margin-bottom: 12px;
+    }
+
+    @include responsive1279 {
+      max-width: 60%;
+    }
+
+    @include responsive1023 {
+      margin-bottom: 9px;
+    }
+
+    @include responsive767 {
+      max-width: 50%;
+    }
+  }
+
+  .btn {
+    margin-top: 8px;
+
+    @include responsive1549 {
+      max-width: initial;
+      width: calc(100% + 45px);
+      margin-top: 13px;
+    }
+
+    @include responsive1279 {
+      width: 100%;
+      max-width: 318px;
+    }
+
+    @include responsive1023 {
+      max-width: 270px;
+    }
+
+    @include responsive767 {
+      margin-top: 5px;
+    }
+  }
 }
 
 .fabric-main__right {
+  width: 248px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  @include responsive1549 {
+    width: 208px;
+    gap: 6px;
+  }
+
+  @include responsive1279 {
+    position: relative;
+    padding-left: 137px;
+    min-height: 117px;
+    text-align: left;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  @include responsive389 {
+    padding-left: 105px;
+  }
+
+  p,
+  strong {
+    @include responsive1279 {
+      margin-bottom: 8px;
+    }
+
+    @include responsive1023 {
+      margin-bottom: 6px;
+    }
+  }
+
+  strong {
+    @include responsive1279 {
+      max-width: 70%;
+    }
+  }
+
   .picture-block {
+    width: 137px;
+    height: 137px;
+    margin-bottom: 10px;
+
+    @include responsive1279 {
+      width: 117px;
+      height: 117px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 0;
+    }
+
+    @include responsive389 {
+      width: 90px;
+      height: 90px;
+    }
   }
 
   .link-mail {
+    color: $colorDark;
+    opacity: 0.5;
+    font-weight: 400;
+
+    @include responsive1549 {
+      font-size: 14px;
+    }
+
+    @include responsive1279 {
+      font-size: 12px;
+    }
+
+    @include responsive389 {
+      font-size: 11px;
+    }
+
+    & + .link-mail {
+      @include responsive1549 {
+        margin-top: -6px;
+      }
+    }
   }
 
   .btn {
