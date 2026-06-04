@@ -1630,6 +1630,7 @@ h5,
   color: #222222 !important;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1803921569);
   border-color: transparent !important;
+  top: 0 !important;
 }
 .header.is-scrolled .logo {
   filter: brightness(0) invert(0) !important;

@@ -101,7 +101,7 @@ $(document).ready(function () {
   }
 
   if ($(".showrooms-main__slider").length > 0) {
-    const teamsSwiper = new Swiper(".showrooms-main__slider", {
+    const showroomsSwiper = new Swiper(".showrooms-main__slider", {
       slidesPerView: "auto",
       spaceBetween: 30,
       breakpoints: {
@@ -174,11 +174,6 @@ $(document).ready(function () {
     $(".phone-input").map(function () {
       // phone input
     });
-  }
-
-  if ($(".thisYear").length > 0) {
-    let date = new Date();
-    $(".thisYear").text(date.getFullYear());
   }
 
   if ($(".subcategories-slider").length > 0) {
