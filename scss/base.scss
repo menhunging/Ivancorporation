@@ -866,39 +866,42 @@ section {
 
   .btnSwiperPrev {
     cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79776 0.213013C7.5281 -0.0710044 7.0909 -0.0710044 6.82124 0.213013L0.404486 6.97148C-0.13483 7.53952 -0.134828 8.46048 0.404486 9.02852L6.82124 15.787C7.0909 16.071 7.5281 16.071 7.79776 15.787C8.06741 15.503 8.06741 15.0425 7.79776 14.7585L1.381 8L7.79776 1.24153C8.06741 0.957515 8.06741 0.497031 7.79776 0.213013Z' fill='%234E5457'/%3e%3c/svg%3e ");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='29' height='27' viewBox='0 0 29 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M28 13.5L1 13.5M14.5 1L1 13.5L14.5 26' stroke='%23222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
     background-position: center;
     background-repeat: no-repeat;
     width: 40px;
     height: 40px;
-    border-radius: 8px;
     display: flex;
-    border: solid 1px $colorBlack;
     transition: all 0.3s;
 
+    &.swiper-button-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     @include hover {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79776 0.213013C7.5281 -0.0710044 7.0909 -0.0710044 6.82124 0.213013L0.404486 6.97148C-0.13483 7.53952 -0.134828 8.46048 0.404486 9.02852L6.82124 15.787C7.0909 16.071 7.5281 16.071 7.79776 15.787C8.06741 15.503 8.06741 15.0425 7.79776 14.7585L1.381 8L7.79776 1.24153C8.06741 0.957515 8.06741 0.497031 7.79776 0.213013Z' fill='%23fff'/%3e%3c/svg%3e ");
-      background-color: $colorBlack;
-      border-color: $colorWhite;
+      transform: scale(1.1);
     }
   }
 
   .btnSwiperNext {
     cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.202243 0.213013C0.471901 -0.0710044 0.909102 -0.0710044 1.17876 0.213013L7.59551 6.97148C8.13483 7.53952 8.13483 8.46048 7.59551 9.02852L1.17876 15.787C0.909101 16.071 0.4719 16.071 0.202242 15.787C-0.0674151 15.503 -0.067415 15.0425 0.202242 14.7585L6.619 8L0.202243 1.24153C-0.0674144 0.957515 -0.0674144 0.497031 0.202243 0.213013Z' fill='%234E5457'/%3e%3c/svg%3e ");
-    background-position: center;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='29' height='27' viewBox='0 0 29 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 13.5L28 13.5M14.5 26L28 13.5L14.5 1' stroke='%23222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
     background-repeat: no-repeat;
+    background-position: center;
     width: 40px;
     height: 40px;
     border-radius: 8px;
     display: flex;
-    border: solid 1px $colorBlack;
     transition: all 0.3s;
 
+    &.swiper-button-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     @include hover {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.202243 0.213013C0.471901 -0.0710044 0.909102 -0.0710044 1.17876 0.213013L7.59551 6.97148C8.13483 7.53952 8.13483 8.46048 7.59551 9.02852L1.17876 15.787C0.909101 16.071 0.4719 16.071 0.202242 15.787C-0.0674151 15.503 -0.067415 15.0425 0.202242 14.7585L6.619 8L0.202243 1.24153C-0.0674144 0.957515 -0.0674144 0.497031 0.202243 0.213013Z' fill='%23fff'/%3e%3c/svg%3e ");
-      background-color: $colorBlack;
-      border-color: $colorWhite;
+      transform: scale(1.1);
     }
   }
 }

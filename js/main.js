@@ -121,6 +121,208 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".modal").length > 0 && typeof MicroModal !== "undefined") {
+    MicroModal.init({
+      openTrigger: "data-modal",
+      onShow: () => {
+        $("body").addClass("modal-open");
+      },
+      onClose: () => {
+        $("body").removeClass("modal-open");
+      },
+    });
+
+    $("[data-modal]").on("click", function (e) {
+      e.preventDefault();
+    });
+  }
+
+  if ($(".fabric-all__slider").length > 0) {
+    const fabricDesktopMedia = window.matchMedia("(min-width: 1024px)");
+    const fabricSwiperMedia = window.matchMedia("(min-width: 768px)");
+    const $fabricSlider = $(".fabric-all__slider");
+    let fabricAllSwiper = null;
+
+    function getFabricSwiperOptions() {
+      return {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        navigation: {
+          nextEl: ".fabric-all .btnSwiperNext",
+          prevEl: ".fabric-all .btnSwiperPrev",
+        },
+      };
+    }
+
+    function onFabricSlideClick(_swiper, event) {
+      const $target = $(event.target);
+      const $item = $target.closest(
+        ".fabric-all__item:not(.fabric-all__item--empty)",
+      );
+
+      if (!$item.length || $target.closest(".fabric-all__invis").length) {
+        return;
+      }
+
+      handleFabricOpen($item);
+    }
+
+    function initFabricSwiper() {
+      if (
+        !fabricSwiperMedia.matches ||
+        !$fabricSlider.length ||
+        $fabricSlider[0].swiper
+      ) {
+        return;
+      }
+
+      fabricAllSwiper = new Swiper($fabricSlider[0], getFabricSwiperOptions());
+      fabricAllSwiper.on("click", onFabricSlideClick);
+      $fabricSlider.removeClass("is-destroyed");
+      $(".fabric-all").removeClass("is-slider-disabled");
+    }
+
+    function destroyFabricSwiper() {
+      if (fabricAllSwiper) {
+        fabricAllSwiper.destroy(true, true);
+        fabricAllSwiper = null;
+      }
+
+      $fabricSlider.addClass("is-destroyed");
+      $(".fabric-all").addClass("is-slider-disabled");
+    }
+
+    function toggleFabricSwiper() {
+      if (fabricSwiperMedia.matches) {
+        initFabricSwiper();
+      } else {
+        destroyFabricSwiper();
+      }
+    }
+
+    function isFabricDesktop() {
+      return fabricDesktopMedia.matches;
+    }
+
+    function closeFabricInvis() {
+      $(".fabric-all__body > .fabric-invis-block").removeClass("opened");
+      $(".fabric-all__slider").removeClass("opacity");
+      $(document).off("click.fabricInvis");
+    }
+
+    function fillFabricContent($container, $item) {
+      const title = $item.find(".fabric-all__content .caption").text().trim();
+      const caption = $item.find(".fabric-all__invis .caption").text().trim();
+      const text = $item.find(".text-small").text().trim();
+      const imgSrc = $item.find(".picture-block img").attr("data-src-big");
+
+      $container.find(".fabric-invis-block__title").text(title);
+      $container.find(".fabric-invis-block__content .caption").text(caption);
+      $container.find(".fabric-invis-block__controls .text").text(text);
+
+      const $picture = $container.find(".picture-block");
+
+      if ($picture.length && imgSrc) {
+        $picture.find("img").attr("src", imgSrc);
+
+        const $webpSource = $picture.find("source[type='image/webp']");
+
+        if ($webpSource.length) {
+          $webpSource.attr("srcset", imgSrc);
+        }
+      }
+    }
+
+    function openFabricInvis($item) {
+      if (!isFabricDesktop()) return;
+
+      closeFabricInvis();
+      fillFabricContent($(".fabric-all__body > .fabric-invis-block"), $item);
+
+      $(".fabric-all__body > .fabric-invis-block").addClass("opened");
+      $(".fabric-all__slider").addClass("opacity");
+
+      setTimeout(function () {
+        $(document).on("click.fabricInvis", function (event) {
+          if (!$(event.target).closest(".fabric-invis-block").length) {
+            closeFabricInvis();
+          }
+        });
+      }, 0);
+    }
+
+    function openFabricModal(modalId, $item) {
+      if (isFabricDesktop() || !modalId || typeof MicroModal === "undefined") {
+        return;
+      }
+
+      const $modal = $("#" + modalId);
+
+      if ($item && $item.length) {
+        fillFabricContent($modal.find(".fabric-invis-block"), $item);
+      }
+
+      setTimeout(function () {
+        MicroModal.show(modalId, {
+          onShow: () => {
+            $("body").addClass("modal-open");
+          },
+          onClose: () => {
+            $("body").removeClass("modal-open");
+          },
+        });
+      }, 200);
+    }
+
+    function handleFabricOpen($item) {
+      if (!$item.length) return;
+
+      if (isFabricDesktop()) {
+        openFabricInvis($item);
+        return;
+      }
+
+      openFabricModal($item.attr("data-modal-fabric"), $item);
+    }
+
+    $(".fabric-all").on("click", ".fabric-all__invis", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const $item = $(this).closest(
+        ".fabric-all__item:not(.fabric-all__item--empty)",
+      );
+      handleFabricOpen($item);
+    });
+
+    $(".fabric-all").on(
+      "click",
+      ".fabric-all__item:not(.fabric-all__item--empty)",
+      function (event) {
+        if (fabricSwiperMedia.matches) return;
+
+        if ($(event.target).closest(".fabric-all__invis").length) return;
+
+        handleFabricOpen($(this));
+      },
+    );
+
+    $(".back-fabric-invis").on("click", function (event) {
+      event.preventDefault();
+      closeFabricInvis();
+    });
+
+    toggleFabricSwiper();
+
+    fabricSwiperMedia.addEventListener("change", toggleFabricSwiper);
+
+    fabricDesktopMedia.addEventListener("change", function () {
+      if (!isFabricDesktop()) {
+        closeFabricInvis();
+      }
+    });
+  }
+
   if ($("[data-fancybox]").length > 0) {
     Fancybox.bind("[data-fancybox]", {
       speedIn: 600,
@@ -229,24 +431,6 @@ $(document).ready(function () {
       mouseevent: "click",
       attribute: "href",
       animation: true,
-    });
-  }
-
-  if ($(".modal").length > 0) {
-    MicroModal.init({
-      openTrigger: "data-modal",
-
-      onShow: () => {
-        $("body").addClass("modal-open");
-      },
-
-      onClose: () => {
-        $("body").removeClass("modal-open");
-      },
-    });
-
-    $("[data-modal]").map(function () {
-      $(this).click((e) => e.preventDefault());
     });
   }
 });

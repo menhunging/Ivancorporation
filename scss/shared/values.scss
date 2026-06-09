@@ -66,6 +66,12 @@ $responsive389: "389px";
   }
 }
 
+@mixin responsiveMinWidth1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin responsiveMinWidth768 {
   @media (min-width: 768px) {
     @content;
