@@ -1,0 +1,280 @@
+.fabric-block {
+}
+
+.fabric-block__head {
+  max-width: 895px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  .caption {
+  }
+}
+
+.fabric-block__body {
+  margin-top: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  @include responsive1023 {
+    margin-top: 32px;
+  }
+
+  @include responsive767 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &.is-loaded {
+    opacity: 1;
+  }
+}
+
+.fabric-block__list {
+}
+
+.fabric-block__item {
+  position: relative;
+  width: 380px;
+  border: solid 1px $colorWhite;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: $colorWhite;
+  padding: 30px;
+
+  @include responsive1549 {
+    width: calc(100% / 4);
+    padding: 20px;
+  }
+
+  @include responsive1023 {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  @include responsive767 {
+    width: calc(100% / 3);
+  }
+
+  &.mobile {
+    display: none;
+  }
+
+  &.desktop {
+    @include responsive767 {
+      display: none;
+    }
+  }
+
+  .invisLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    text-indent: 200%;
+    white-space: nowrap;
+  }
+
+  &:nth-child(1) {
+    height: 1014px;
+
+    @include responsive1549 {
+      height: 705px;
+    }
+
+    @include responsive1279 {
+      height: 537px;
+    }
+
+    @include responsive1023 {
+      height: 450px;
+    }
+
+    @include responsive767 {
+      height: 125px;
+    }
+
+    .picture-block {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    height: 398px;
+
+    @include responsive1549 {
+      height: 282px;
+    }
+
+    @include responsive1279 {
+      height: 215px;
+    }
+
+    @include responsive1023 {
+      height: 180px;
+    }
+  }
+
+  &:nth-child(3) {
+    height: 576px;
+
+    @include responsive1549 {
+      height: 408px;
+    }
+
+    @include responsive1279 {
+      height: 312px;
+    }
+
+    @include responsive1023 {
+      height: 260px;
+    }
+
+    @include responsive767 {
+      height: 125px;
+    }
+  }
+
+  &:nth-child(4) {
+    height: 399px;
+
+    @include responsive1549 {
+      height: 282px;
+    }
+
+    @include responsive1279 {
+      height: 215px;
+    }
+
+    @include responsive1023 {
+      height: 180px;
+    }
+
+    @include responsive767 {
+      height: 191px;
+    }
+  }
+
+  &:nth-child(5) {
+    height: 616px;
+
+    @include responsive1549 {
+      height: 423px;
+    }
+
+    @include responsive1279 {
+      height: 322px;
+    }
+
+    @include responsive1023 {
+      height: 270px;
+    }
+
+    @include responsive767 {
+      height: 191px;
+    }
+  }
+
+  &:nth-child(6) {
+    height: 615px;
+
+    @include responsive1549 {
+      height: 423px;
+    }
+
+    @include responsive1279 {
+      height: 322px;
+    }
+
+    @include responsive1023 {
+      height: 270px;
+    }
+
+    @include responsive767 {
+      height: 136px;
+    }
+  }
+
+  &:nth-child(7) {
+    height: 438px;
+
+    @include responsive1549 {
+      height: 297px;
+    }
+
+    @include responsive1279 {
+      height: 225px;
+    }
+
+    @include responsive1023 {
+      height: 190px;
+    }
+  }
+
+  &.full {
+    width: 100%;
+    height: 234px;
+    margin-bottom: 16px;
+
+    .picture-block {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .fabric-block__title {
+    position: relative;
+    z-index: 2;
+    text-transform: none;
+    margin-bottom: 20px;
+
+    @include before {
+      width: 156px;
+      height: 1px;
+      background-color: $colorWhite;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  .fabric-block__text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .picture-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include before {
+      width: 100%;
+      height: 100%;
+      background-color: $colorBlack-a4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+}

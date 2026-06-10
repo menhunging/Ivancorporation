@@ -353,6 +353,52 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".fabric-block__list").length > 0) {
+    const fabricLists = $(".fabric-block__list");
+    const isMobile = $(window).width() < 767;
+
+    function initMasonry(list) {
+      list.masonry({
+        itemSelector: ".fabric-block__item",
+      });
+    }
+
+    function resetMasonry() {
+      fabricLists.each(function () {
+        const list = $(this);
+        if (!list.data("masonry")) return;
+        list.masonry("reloadItems");
+        list.masonry("layout");
+      });
+    }
+
+    if (isMobile) {
+      fabricLists.each(function () {
+        const list = $(this);
+        const body = list.closest(".fabric-block__body");
+        const firstItem = list.children(".fabric-block__item").first();
+
+        if (firstItem.length && !firstItem.hasClass("full")) {
+          firstItem.appendTo(body).addClass("full");
+        }
+
+        initMasonry(list);
+      });
+    } else {
+      fabricLists.each(function () {
+        initMasonry($(this));
+      });
+    }
+
+    setTimeout(function () {
+      $(".fabric-block__body").addClass("is-loaded");
+    }, 300);
+
+    $(window).on("resize", function () {
+      resetMasonry();
+    });
+  }
+
   // base
   if ($(".faq-list").length > 0) {
     $(".faq-section__quest").on("click", function () {
