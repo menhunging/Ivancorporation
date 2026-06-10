@@ -19,6 +19,14 @@
   margin-top: 30px;
   position: relative;
 
+  @include responsive1549 {
+    margin-top: 40px;
+  }
+
+  @include responsive1279 {
+    margin-top: 23px;
+  }
+
   @include responsive767 {
     margin-top: 20px;
   }
