@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <title>UI-элементы</title>
+    <title>Команда</title>
 
     <link rel="icon" type="image/png" href="../../img/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../../img/favicon/favicon.svg" />
@@ -22,16 +22,6 @@
     <link rel="stylesheet" type="text/css" href="../../libs/fancybox/fancybox.css" />
     <link rel="stylesheet" type="text/css" href="../../css/style.css" />
 </head>
-
-<style>
-    .block {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 40px;
-    }
-</style>
 
 <body class="inner-page">
 
@@ -92,30 +82,55 @@
         </header>
 
         <main class="main">
-            <div class="container">
+            <section class="breadcrumbs">
+                <div class="container">
+                    <ul class="breadcrumbs-list">
+                        <li class="breadcrumbs-item">
+                            <a href="/" class="breadcrumbs-link">Главная</a>
+                        </li>
+                        <li class="breadcrumbs-item">
+                            <span class="breadcrumbs-link">Команда</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-                <div class="block">
-                    <h1>Заголовок</h1>
-                    <h2>Заголовок</h2>
-                    <h3>Заголовок</h3>
-                    <h4>Заголовок</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                    <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</strong>
+            <section class="page-title">
+                <div class="container">
+                    <h1 class="caption caption--h1">Команда</h1>
+                    <p>
+                        Наши менеджеры, логисты и технические специалисты работают как единый механизм, чтобы вы
+                        получали не просто коробку с мебелью, а безупречный сервис. Мы говорим с вами на одном языке —
+                        языке красоты, качества и уважения
+                    </p>
+                </div>
+            </section>
+
+            <section class="map-main">
+                <div class="container">
+                    <div class="map-main__head">
+                        <h2 class="caption caption--h2">КАРТА НАШИХ ПРОЕКТОВ И ЦЕНТРОВ</h2>
+                        <p>
+                            За каждой поставкой, каждой консультацией и каждым реализованным проектом стоит команда
+                            увлечённых профессионалов.
+                        </p>
+
+                        <p>
+                            Мы не просто продаём мебель — мы искренне любим итальянский дизайн, разбираемся в деталях
+                            отделки и знаем истории фабрик, как свои собственные.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="block">
-                    <button class="btn btn--simple btn--arrow">ПОЗНАКОМИТЬСЯ С ФАБРИКАМИ</button>
-
-                    <button class="btn btn--white btn--arrow--big"></button>
-
-                    <button class="btn btn--white btn--arrow">ПОДРОБНЕЕ</button>
-
-                    <button class="btn btn--dark btn--arrow">ПЕРЕЙтИ К КАТАЛОГАМ</button>
-
-                    <button class="btn btn--white btn--big btn--arrow--big">СМОТРЕТЬ ФОТО</button>
+                <div class="picture-block">
+                    <picture>
+                        <source type="image/webp" srcset="./../../img/pic-map-main.webp" />
+                        <img src="./../../img/pic-map-main.png" alt="" fetchpriority="low" loading="lazy" />
+                    </picture>
                 </div>
 
-            </div>
+            </section>
+
 
         </main>
 

@@ -230,143 +230,6 @@ section {
   }
 }
 
-.selectric-wrapper {
-  border: 0;
-  outline: none;
-  height: 50px;
-
-  &.selectric-hover {
-    .selectric {
-      border-color: $colorBlack;
-    }
-  }
-
-  &.selectric-open {
-    .selectric {
-      border-color: $colorBlack;
-
-      .button {
-        transform: scale(1, -1);
-      }
-    }
-  }
-
-  &.selectric-above {
-    .selectric-items {
-      border: solid 1px $colorBlack;
-    }
-
-    .selectric-scroll ul {
-    }
-  }
-
-  @include responsive1549 {
-    height: 30px;
-  }
-}
-
-.selectric {
-  border: 0;
-  background: transparent;
-  width: 100%;
-  height: 50px;
-  width: 100%;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-radius: 0;
-
-  @include responsive1549 {
-    height: 30px;
-  }
-
-  .label {
-    font-weight: 400;
-    height: 100%;
-    padding: 10px 0;
-    font-weight: 400;
-    font-family: $fontMain;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0%;
-    margin: 0;
-    color: $colorBlack;
-    border-bottom: solid 1px rgba(159, 159, 159, 1);
-
-    @include responsive1549 {
-      padding: 0;
-      font-size: 12px;
-    }
-  }
-
-  .button {
-    display: none;
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.5 1L7.5 7L13.5 1' stroke='%23222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 12px;
-    transition: all 0.3s;
-    top: 50%;
-    right: 24px;
-    margin-top: -12px;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-.selectric-items {
-  background: transparent;
-  background-color: $colorWhite;
-  border: 0;
-  border-bottom-right-radius: 9px;
-  border-bottom-left-radius: 9px;
-  box-shadow: 0px 6px 15px 0px rgba(98, 97, 97, 0.25);
-  border-top: 0;
-  overflow: hidden;
-  z-index: -1;
-  min-width: 140px;
-  right: 0;
-  left: auto;
-}
-
-.selectric-scroll {
-  border: 0;
-
-  ul {
-    padding-top: 5px;
-
-    li {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
-      color: #7b7b7b;
-      padding: 8px;
-      transition: all 0.3s;
-
-      &.highlighted,
-      &.selected {
-        background: transparent !important;
-        text-decoration: underline;
-        color: $colorBlack;
-      }
-
-      &:hover {
-        background: transparent !important;
-        color: $colorBlack;
-      }
-    }
-  }
-}
-
-.selectric-open {
-  z-index: 4;
-}
-
 .swiper-pagination-bullets {
   bottom: 0 !important;
   top: auto !important;
@@ -714,50 +577,6 @@ section {
   z-index: 5;
 }
 
-.pagination {
-  margin-top: 32px;
-
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  li {
-  }
-
-  .pagination-link {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    transition: all 0.3s;
-    border-radius: 8px;
-
-    @include responsive639 {
-      width: 32px;
-      height: 32px;
-      font-size: 14px;
-    }
-
-    &.active {
-      background-color: rgba(78, 84, 87, 0.2);
-    }
-  }
-
-  a.pagination-link {
-    cursor: pointer;
-
-    @include hover {
-      background-color: rgba(78, 84, 87, 0.2);
-    }
-  }
-}
-
 // 100%
 .link-phone {
   cursor: pointer;
@@ -1019,5 +838,59 @@ section {
 
   .caption {
     text-transform: none;
+  }
+
+  p {
+    max-width: 990px;
+    margin-top: 30px;
+    display: block;
+  }
+}
+
+.error-message {
+  color: #ef0000;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.not-page {
+  padding: 0;
+  flex: 1;
+
+  .not-page__inner {
+    display: flex;
+    align-items: center;
+  }
+  .not-page__left {
+    width: 50%;
+    position: relative;
+    min-height: 695px;
+
+    .picture-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+      }
+    }
+  }
+  .not-page__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  svg {
+    margin-bottom: 24px;
+  }
+
+  .btn {
   }
 }

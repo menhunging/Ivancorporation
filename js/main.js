@@ -100,6 +100,44 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".teams__slider--v2").length > 0) {
+    const teamsSwiperV2 = new Swiper(".teams__slider--v2", {
+      slidesPerView: "auto",
+      spaceBetween: 32,
+      pagination:{
+        el: ".teams__slider--v2 .swiper-pagination",
+        clickable: true,
+        type: "progressbar",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.8,
+          spaceBetween: 12,
+        },
+        390: {
+          slidesPerView: 2.1,
+          spaceBetween: 12,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 18,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 18,
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1550: {
+          slidesPerView: "auto",
+          spaceBetween: 32,
+        },
+      },
+    });
+  }
+
   if ($(".showrooms-main__slider").length > 0) {
     const showroomsSwiper = new Swiper(".showrooms-main__slider", {
       slidesPerView: "auto",
@@ -135,6 +173,28 @@ $(document).ready(function () {
     $("[data-modal]").on("click", function (e) {
       e.preventDefault();
     });
+  }
+
+  if ($(".input-password").length > 0) {
+    $(".input-password").each(function () {
+      toggleModalSubmitState($(this));
+    });
+
+    $(document).on("input", ".input-password", function () {
+      toggleModalSubmitState($(this));
+    });
+
+    function toggleModalSubmitState(input) {
+      const modalContent = input.closest(".modal__content");
+      const submitButton = modalContent.find(
+        "button[disabled], button[type='submit']",
+      );
+      const hasValue = $.trim(input.val()).length > 0;
+
+      if (!submitButton.length) return;
+
+      submitButton.prop("disabled", !hasValue);
+    }
   }
 
   if ($(".fabric-all__slider").length > 0) {

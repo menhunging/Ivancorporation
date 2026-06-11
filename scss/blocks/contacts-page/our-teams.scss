@@ -1,0 +1,39 @@
+.our-teams {
+  overflow: hidden;
+  background-color: $colorLightGray;
+  padding: 100px 0;
+}
+
+.our-teams__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .caption {
+    white-space: nowrap;
+  }
+
+  p {
+    text-align: right;
+    max-width: 800px;
+  }
+}
+
+.our-teams__body {
+  margin-top: 60px;
+
+  .teams__slider--v2 {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.our-teams__controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}

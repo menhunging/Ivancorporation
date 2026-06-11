@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="../../libs/selectric/selectric.css" />
     <link rel="stylesheet" type="text/css" href="../../libs/micromodal/micromodal.css" />
     <link rel="stylesheet" type="text/css" href="../../libs/fancybox/fancybox.css" />
-    <link rel="stylesheet" type="text/css" href="../../libs/aos/aos.css" />
     <link rel="stylesheet" type="text/css" href="../../css/style.css" />
 </head>
 
@@ -33,15 +32,14 @@
                 <br />
                 <br />
 
-                <a href="#" data-modal="popup-call">Заказать звонок</a>
+                <a href="#" data-modal="popup-password">Введите пароль</a>
 
                 <br />
                 <br />
 
-                <a href="#" data-modal="popup-guarant">Гарантия на аксессуары</a>
+                <a href="#" data-modal="popup-fabric">Пример попапа фабрик</a>
 
-                <br>
-                <br>
+
             </div>
         </main>
 
@@ -49,83 +47,50 @@
 
 </body>
 
-<div class="micromodal-slide modal" id="popup-call" aria-hidden="true">
+<div class="micromodal-slide modal" id="popup-password" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
     <div class="modal__container" role="dialog" aria-modal="true">
         <div class="modal__close" tabindex="-1" data-micromodal-close></div>
-        <div class="modal__inner">
+        <form class="modal__inner" action="" method="post">
             <div class="modal__content" autocomplete="off">
-                <div class="popup-send">
+                <span class="modal__title caption caption--h3">Введите пароль</span>
+                <p>
+                    Эта ссылка защищена паролем. Свяжитесь с владельцем файла, чтобы узнать пароль.
+                </p>
 
-                    <section class="partners">
-                        <div class="partners__head">
-                            <h2 class="caption caption--h3" data-aos="fade-right" data-aos-duration="1200">
-                                Заказать звонок
-                            </h2>
-                        </div>
-
-                        <form action="" class="partners__body">
-                            <div class="input-item">
-                                <input type="text" placeholder="имя">
-                            </div>
-
-                            <div class="input-item">
-                                <input type="tel" placeholder="+7" class="phone-input" required>
-                            </div>
-
-                            <div class="input-item">
-                                <input type="email" placeholder="email" required>
-                            </div>
-
-                            <div class="check-block">
-                                <input type="checkbox" id="personal" checked required>
-                                <label for="personal">
-                                    Нажимая на кнопку “Стать партнером” вы соглашаетесь с обработкой персональных
-                                    данных и с
-                                    <a href="/">политикой конфиденциальности</a>
-                                </label>
-                            </div>
-
-                            <button class="btn btn--arrow btn--orange">отправить</button>
-                        </form>
-                    </section>
-
+                <div class="input-item">
+                    <input type="text" placeholder="Введите пароль" class="input-password">
+                    <span class="error-message">*Неверный пароль</span>
                 </div>
 
+                <button class="btn btn--dark" disabled>Отправить</button>
+
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
-<div class="micromodal-slide modal" id="popup-guarant" aria-hidden="true">
+<div class="micromodal-slide modal" id="popup-fabric" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
     <div class="modal__container" role="dialog" aria-modal="true">
         <div class="modal__close" tabindex="-1" data-micromodal-close></div>
         <div class="modal__inner">
-            <div class="modal__content" autocomplete="off">
-                <div class="popup-guarant">
+            <div class="modal__content">
+                <div class="fabric-invis-block fabric-invis-block--modal">
+                    <div class="fabric-invis-block__content">
+                        <span class="fabric-invis-block__title">Kastel</span>
+                        <span class="caption caption--h2">Стильные решения
+                            для комфорта </span>
+                        <a href="#" class="btn btn--dark btn--arrow">ПЕРЕЙТИ К КАТАЛОГАМ</a>
+                    </div>
 
                     <div class="picture-block">
                         <picture>
-                            <source type="image/webp" srcset="./../../img/garan5.webp" />
-                            <img src="./../../img/garan5.png" alt="">
+                            <source type="image/webp" srcset="./../../img/pic-fabric-all-big.webp" />
+                            <img src="./../../img/pic-fabric-all-big.jpg" alt="" />
                         </picture>
                     </div>
-
-                    <span class="caption caption--h4">гарантия на аксессуары</span>
-
-                    <p>Срок гарантии зависит от категории товара и указывается в сопроводительных документах. Гарантия
-                        распространяется на производственные дефекты и неисправности, возникшие не по вине покупателя.
-                        Гарантийный ремонт или замена осуществляется при предъявлении чека или иного подтверждения
-                        покупки.</p>
-
-                    <p>Срок гарантии зависит от категории товара и указывается в сопроводительных документах.
-                        Гарантия распространяется на производственные дефекты и неисправности, возникшие не по вине
-                        покупателя. Гарантийный ремонт или замена
-                        осуществляется при предъявлении чека или иного подтверждения покупки.</p>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -137,8 +102,7 @@
 <script src="../../libs/micromodal/micromodal.min.js"></script>
 <script src="../../libs/tabslet/jquery.tabslet.min.js"></script>
 <script src="../../libs/fancybox/fancybox.umd.js"></script>
-<script src="../../libs/inputmask/jquery.inputmask.min.js"></script>
-<script src="../../libs/aos/aos.js"></script>
+<script src="../../libs/masonry/masonry.pkgd.min.js"></script>
 <script src="../../js/main.js"></script>
 
 </html>

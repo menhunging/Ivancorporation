@@ -1,0 +1,145 @@
+.catalog-block {
+}
+
+.catalog-block__head {
+  max-width: 915px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  .caption {
+  }
+
+  p {
+  }
+}
+
+.catalog-block__body {
+  margin-top: 40px;
+
+  @include responsive1549 {
+    margin-top: 30px;
+  }
+
+  @include responsive1023 {
+    margin-top: 28px;
+  }
+}
+
+.catalog-block__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include responsive767 {
+    flex-direction: column;
+  }
+}
+
+.catalog-block__item {
+  padding: 40px;
+  background-color: $colorLightGray;
+  width: calc(50% - 15px);
+
+  @include responsive1549 {
+    width: calc(50% - 13px);
+  }
+
+  @include responsive1279 {
+    width: calc(50% - 8px);
+  }
+
+  @include responsive1279 {
+    padding: 20px;
+  }
+
+  @include responsive1023 {
+    padding: 16px;
+  }
+
+  @include responsive767 {
+    width: 100%;
+  }
+}
+
+.catalog-block__title {
+  padding-bottom: 27px;
+  border-bottom: solid 1px $colorBlack;
+  display: block;
+  width: 100%;
+
+  @include responsive1279 {
+    padding-bottom: 24px;
+  }
+}
+
+.catalog-block__content {
+}
+
+.catalog-block__age {
+}
+
+.catalog-block__line {
+  padding-top: 33px;
+  padding-bottom: 14px;
+  border-bottom: solid 1px $colorBlack;
+
+  @include responsive1549 {
+    padding: 8px 0;
+  }
+
+  @include responsive1279 {
+    padding: 10px 0;
+  }
+
+  & + .catalog-block__line {
+    padding-top: 14px;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.catalog-block__list-content {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 30px;
+  padding-left: 131px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 120px;
+  gap: 8px;
+
+  @include responsive1549 {
+    font-size: 24px;
+    line-height: 30px;
+    padding-left: 87px;
+    gap: 6px;
+  }
+
+  @include responsive1279 {
+    font-size: 20px;
+    line-height: 24px;
+    max-height: 100px;
+  }
+
+  @include responsive1023 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: initial;
+    padding-left: 71px;
+  }
+
+  a {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+
+    @include hover {
+      opacity: 1;
+    }
+  }
+}
