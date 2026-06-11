@@ -323,6 +323,13 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".customSlider").length > 0) {
+    const customSlider = new Swiper(".customSlider", {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    });
+  }
+
   if ($("[data-fancybox]").length > 0) {
     Fancybox.bind("[data-fancybox]", {
       speedIn: 600,
